@@ -37,9 +37,9 @@ After that, you can use `BeBinaryWriter` and `BeBinaryReader` the same way you w
 using (var file = File.Open("foo.txt", FileMode.Create))
 {
     var writer = new BeBinaryWriter(file);
-    writer.WriteInt16(0x1357);
-    writer.WriteInt32(0xDEADBEEF);
-    writer.WriteInt64(long.MinValue);
+    writer.Write(0x1357);
+    writer.Write(0xDEADBEEF);
+    writer.Write((long)9999999);
     
     var reader = new BeBinaryReader(file);
     short s = reader.ReadInt16();
