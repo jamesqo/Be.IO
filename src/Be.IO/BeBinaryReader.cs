@@ -30,6 +30,18 @@ namespace Be.IO
             this.buffer = new byte[bufferSize];
         }
 
+        public override bool ReadBoolean()
+        {
+            FillBuffer(1);
+            return (buffer[0] != 0);
+        }
+
+        public override sbyte ReadSByte()
+        {
+            FillBuffer(1);
+            return (sbyte)(buffer[0]);
+        }
+
         public override decimal ReadDecimal()
         {
             FillBuffer(16);
